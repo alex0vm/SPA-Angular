@@ -1,0 +1,26 @@
+<h1 class="animated fadeIn fast center"> {{ heroe.nombre | uppercase }} <!--Uppercase usando PIPES-->
+     <br>
+     <small>( {{ heroe.aparicion | date:'y'}} )</small> <!--Solo mostrando año, usando PIPES-->
+</h1>
+<hr>
+
+<div class="card mb-3">
+    <div class="row no-gutters">
+        <div class="col-md-4">
+        <img [src]="heroe.img" class="card-img" alt="heroe.nombre">
+        <a [routerLink]="['/heroes']" class="btn btn-outline-danger btn-block ">Regresar</a>
+        </div>
+        <div class="col-md-8">
+        <div class="card-body">
+            <h5 class="card-title"> {{ heroe.nombre }} </h5>
+            <p class="card-text"> {{ heroe.bio }} </p>
+            <img [src]="heroe.casa" class="container w-25">
+
+            <!-- Alternativa usando *ngIf  sin poner url de img en heroes.service -->
+            <!-- <img *ngIf="heroe.casa =='marvel'" class='img-logo' src="assets/img/marvel.png"> -->
+            <!-- <img *ngIf="heroe.casa =='dc'" class='img-logo' src="assets/img/dc.png"> -->
+        </div>
+
+    </div>
+  </div>
+</div>
